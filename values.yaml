@@ -11,10 +11,10 @@
 ##       don't forget to change the securityContext;
 ##       these images run on different user IDs.
 ##
-image:
-  registry: registry.gitlab.com
-  image: gitlab-org/gitlab-runner
-  # tag: alpine-v11.6.0
+#image:
+#  registry: registry.gitlab.com
+#  image: gitlab-org/gitlab-runner
+#     tag: alpine-v11.6.0
 
 ## Specify a imagePullPolicy for the main runner deployment
 ## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'
