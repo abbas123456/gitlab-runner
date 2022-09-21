@@ -139,7 +139,11 @@
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
 - name: {{ .name }}
+{{- if .valueFrom }}
+  valueFrom: {{ .valueFrom }}
+{{- else -}}
   value: {{ .value | quote }}
+{{- end }}
 {{- end }}
 {{- end }}
 {{- end }}
