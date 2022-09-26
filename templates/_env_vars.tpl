@@ -140,7 +140,8 @@
 {{ range .Values.envVars }}
 - name: {{ .name }}
 {{- if .valueFrom }}
-  valueFrom: {{ .valueFrom }}
+  valueFrom: 
+{{ toYaml .valueFrom | indent 4 }}
 {{- else -}}
   value: {{ .value | quote }}
 {{- end }}
