@@ -1,3 +1,9 @@
+## v0.44.3 (2022-11-11)
+
+### New features
+
+- Update GitLab Runner version to 15.3.3
+
 ## v0.44.2 (2022-10-21)
 
 ### New features
