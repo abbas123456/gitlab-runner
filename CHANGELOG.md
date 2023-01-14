@@ -1,3 +1,9 @@
+## v0.47.2 (2023-01-14)
+
+## v0.47.1 (2022-11-24)
+
+- Update GitLab Runner version to 15.6.2
+
 ## v0.47.1 (2022-11-24)
 
 - Update GitLab Runner version to 15.6.1
