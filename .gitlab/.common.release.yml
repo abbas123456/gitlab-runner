@@ -1,7 +1,7 @@
 .new-runner-version-changelog: &new-runner-version-changelog
   changelog_entry:
     scope: new-feature
-    entry: Update GitLab Runner version to {{ .Release.RunnerVersion }}
+    entry: Update GitLab Runner version to {{ .Release.AppVersion }}
 
 .update-chart-versions: &update-chart-versions
   write:
@@ -9,8 +9,8 @@
     contents: |
       apiVersion: v1
       name: gitlab-runner
-      version: {{ .Release.ChartVersion }}
-      appVersion: {{ .Release.RunnerVersion }}
+      version: {{ .Release.Version }}
+      appVersion: {{ .Release.AppVersion }}
       description: GitLab Runner
       keywords:
       - git
@@ -26,4 +26,4 @@
 
 .commit-chart-versions: &commit-chart-versions
   files: Chart.yaml
-  message: Update Chart version to {{ .Release.ChartVersion }} and used GitLab Runner version to {{ .Release.RunnerVersion }}
+  message: Update Chart version to {{ .Release.Version }} and used GitLab Runner version to {{ .Release.AppVersion }}
