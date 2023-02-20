@@ -1,0 +1,7 @@
+include:
+  - .changelog.yaml
+
+actions:
+  - *new-runner-version-changelog
+  - *update-chart-versions
+  - *commit-chart-versions
