@@ -25,5 +25,6 @@
         email: support@gitlab.com
 
 .commit-chart-versions: &commit-chart-versions
-  files: Chart.yaml
-  message: Update Chart version to {{ .Release.Version }} and used GitLab Runner version to {{ .Release.AppVersion }}
+  commit:
+    files: Chart.yaml
+    message: Update Chart version to {{ .Release.Version }} and used GitLab Runner version to {{ .Release.AppVersion }}
