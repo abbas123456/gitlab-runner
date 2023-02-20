@@ -26,5 +26,5 @@
 
 .commit-chart-versions: &commit-chart-versions
   commit:
-    files: Chart.yaml
+    files: [Chart.yaml]
     message: Update Chart version to {{ .Release.Version }} and used GitLab Runner version to {{ .Release.AppVersion }}
