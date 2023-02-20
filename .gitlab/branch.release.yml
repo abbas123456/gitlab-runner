@@ -1,5 +1,5 @@
 include:
-  - .changelog.yaml
+  - .common.release.yml
 
 actions:
   - *new-runner-version-changelog
