@@ -5,7 +5,7 @@
 
 .update-chart-versions: &update-chart-versions
   write:
-    file: Chart.yml
+    file: Chart.yaml
     contents: |
       apiVersion: v1
       name: gitlab-runner
