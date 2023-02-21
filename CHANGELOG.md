@@ -1,3 +1,16 @@
+## v0.50.0 (2023-02-21)
+
+### New features
+
+- Update GitLab Runner version to v15.9.0
+- Add namespace to service account manifest !375 (Daniel Schömer @quatauta)
+
+### Maintenance
+
+- Add Chart repository as source !379 (Geoffrey McQuat @gmcquat)
+- Fix grammatical error in instructional comment !376 (Shafiullah Khan @gitshafi)
+- Add reference to actual documentation method of obtaining runnerRegistrationToken !361 (SveLem @SveLem)
+
 ## v0.48.0 (2022-12-17)
 
 ### New features
