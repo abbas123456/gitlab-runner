@@ -1,3 +1,15 @@
+## v0.51.0 (2023-03-20)
+
+### New features
+
+- Update GitLab Runner version to v15.10.0
+- Removing replicaCount from deployment when HPA is configured !368 (Gustavo Oliveira @gustoliv)
+
+### Maintenance
+
+- Fix integration test scripting !383
+- Update the example reference to the helper image !382
+
 ## v0.48.0 (2022-12-17)
 
 ### New features
