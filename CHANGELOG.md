@@ -1,3 +1,60 @@
+## v0.53.2 (2023-06-08)
+
+### New features
+
+- Update GitLab Runner version to v16.0.2
+
+### Bug fixes
+
+- Revert cache settings through Kubernetes secret in values yaml !406
+- Take in account registration token from secret !405
+- Support empty rules defined in the values.yaml !402
+
+### Maintenance
+
+- Remove reference to rbac.resources and rbac.verbs !403
+
+## v0.52.1 (2023-06-02)
+
+### New features
+
+- Update GitLab Runner version to v15.11.1
+
+## v0.53.1 (2023-05-25)
+
+### New features
+
+- Update GitLab Runner version to v16.0.1
+
+## v0.53.0 (2023-05-22)
+
+### New features
+
+- Update GitLab Runner version to v16.0.0
+
+### Maintenance
+
+- Adapt the Helm Chart to support the next Token Architecture !398
+- Remove namespace and cache deprecated fields from the Helm Chart project !397
+- Remove all deprecated fields that can be resolved with template merging !393
+- Fix failure in integration tests !390
+
+## v0.52.0 (2023-04-22)
+
+### New features
+
+- Update GitLab Runner version to v15.11.0
+
+### Bug fixes
+
+- Enable ability to use tini instead of dumb-init !385
+- Invalid yaml when creating service account with no annotations !381 (Zev Isert @zevisert)
+
+### Maintenance
+
+- Fix failure in integration tests !390
+- Add merge release config to be executed after stable branches are merged into the main branch !387
+
 ## v0.48.0 (2022-12-17)
 
 ### New features
