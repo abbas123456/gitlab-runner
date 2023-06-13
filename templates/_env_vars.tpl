@@ -19,6 +19,10 @@
   value: {{ .Release.Namespace | quote }}
 {{- end }}
 {{- end }}
+{{- if .Values.runners.serviceAccountName }}
+- name: KUBERNETES_SERVICE_ACCOUNT
+  value: {{ .Values.runners.serviceAccountName | quote }}
+{{- end }}
 {{- if .Values.envVars -}}
 {{ range .Values.envVars }}
 - name: {{ .name }}

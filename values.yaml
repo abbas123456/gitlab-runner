@@ -412,6 +412,10 @@ runners:
     ## Use this line for access using Azure with azure-account-name and azure-account-key
     # secretName: azureaccess
 
+  ## Service Account to be used for runners
+  ##
+  # serviceAccountName:
+
 ## Specify the name of the scheduler which used to schedule runner pods.
 ## Kubernetes supports multiple scheduler configurations.
 ## ref: https://kubernetes.io/docs/reference/scheduling
