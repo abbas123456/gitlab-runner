@@ -15,6 +15,11 @@ data:
 
     export CONFIG_PATH_FOR_INIT="{{ ternary "/.gitlab-runner/" "/home/gitlab-runner/.gitlab-runner/" (and (hasKey .Values.securityContext "runAsNonRoot") (not .Values.securityContext.runAsNonRoot)) }}"
     mkdir -p ${CONFIG_PATH_FOR_INIT}
+
+    # Generate the .runner_system_id file
+    system_id=$(echo -n "{{ .Release.Name }}-{{ .Release.Namespace }}" | sha256sum | awk '{print $1}')
+    echo "r_${system_id:0:12}" > ${CONFIG_PATH_FOR_INIT}/.runner_system_id
+
     cp /configmaps/config.toml ${CONFIG_PATH_FOR_INIT}
 
     {{- if and (eq (default 1.0 .Values.replicas) 1.0) .Values.sessionServer .Values.sessionServer.enabled }}
