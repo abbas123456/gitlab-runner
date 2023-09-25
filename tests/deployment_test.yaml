@@ -4,23 +4,28 @@ templates:
   - configmap.yaml
   - secrets.yaml
 tests:
-  - it: renders runner registration token secret
+  - it: adds token and registration token as projected secrets
+    template: deployment.yaml
+    asserts:
+      - isKind:
+          of: Deployment
+      - contains:
+          path: spec.template.spec.volumes[?(@.name=="projected-secrets")].projected.sources
+          content:
+            secret:
+                items:
+                  - key: runner-registration-token
+                    path: runner-registration-token
+                  - key: runner-token
+                    path: runner-token
+                name: RELEASE-NAME-gitlab-runner
+  - it: does not add token and registration token as projected secrets if externallyManagedCiTokensEnvVariables is set
     set:
-      image.tag: latest
+      externallyManagedCiTokensEnvVariables: true
     template: deployment.yaml
     asserts:
       - isKind:
           of: Deployment
       - equal:
-          path: spec.template.spec.volumes[2].name
-          value: projected-secrets
-      - equal:
-          path: spec.template.spec.volumes[2].projected.sources[0]
-          value:
-            secret:
-              name: RELEASE-NAME-gitlab-runner
-              items:
-                - key: runner-registration-token
-                  path: runner-registration-token
-                - key: runner-token
-                  path: runner-token
+          path: spec.template.spec.volumes[?(@.name=="projected-secrets")].projected.sources
+          value: null

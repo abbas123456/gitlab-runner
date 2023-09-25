@@ -126,6 +126,7 @@ spec:
             - secret:
                 name: {{ include "gitlab-runner.cache.secret" . }}
             {{- end }}
+            {{- if not .Values.externallyManagedCiTokensEnvVariables }}
             - secret:
                 name: {{ include "gitlab-runner.secret" . }}
                 items:
@@ -133,6 +134,7 @@ spec:
                     path: runner-registration-token
                   - key: runner-token
                     path: runner-token
+            {{- end }}
 
             {{- range .Values.secrets }}
             - secret:

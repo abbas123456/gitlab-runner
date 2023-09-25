@@ -563,6 +563,12 @@ secrets: []
   #     - key: key_one
   #       path: path_one
 
+## If you're using externally managed secrets solution
+## that sets CI_SERVER_TOKEN or REGISTRATION_TOKEN
+## then set this variable to true to disable
+## reading of these variables from projected volumes
+externallyManagedCiTokensEnvVariables: false
+
 ## Boolean to turn off the automountServiceAccountToken in the deployment
 ## ref: https://kubernetes.io/docs/reference/access-authn-authz/service-accounts-admin/#bound-service-account-token-volume
 ##
